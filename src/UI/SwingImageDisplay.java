@@ -42,4 +42,3 @@ public class SwingImageDisplay extends JPanel implements ImageDisplay{
             }
         }
     }
-
