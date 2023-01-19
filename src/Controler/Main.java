@@ -16,5 +16,6 @@ public class Main {
         Image image = imageLoader.load();
         MainFrame mainFrame = new MainFrame(imageLoader);
         mainFrame.getImageDisplay().show(image);
+        mainFrame.imageLoader.load();
     }
 }

@@ -10,6 +10,11 @@ import javax.swing.WindowConstants;
 import UI.ImageDisplay;
 import UI.SwingImageDisplay;
 
+/**
+ * 
+ * @author Louka Vanhoucke
+ */
+
 public class MainFrame extends JFrame {
     
     private ImageDisplay imageDisplay;
@@ -17,12 +22,14 @@ public class MainFrame extends JFrame {
     
     public MainFrame(ImageLoader imageLoader) {
         this.imageLoader = imageLoader; 
-        this.setTitle("Image Viewer");
+        this.setTitle("Image Viewer IS2");
         this.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         this.setSize(800,600);
         this.setLocationRelativeTo(null);
         this.getContentPane().add(imageDisplay());
         this.getContentPane().add(toolBar(),BorderLayout.SOUTH);
+        currentImage();
+        this.repaint();
         this.setVisible(true);
     }
     
@@ -61,6 +68,10 @@ public class MainFrame extends JFrame {
 
     private ActionListener nextImage() {
         return e -> imageDisplay.show(imageLoader.next());
+    }
+    
+    private ActionListener currentImage() {
+        return e -> imageDisplay.show(imageLoader.load());
     }
 } 
 
